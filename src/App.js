@@ -16,18 +16,9 @@ const App = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [seconds, setSeconds] = useState(0);
-
   function displayApp() {
     document.getElementByClass("app").style.display = "none";
   }
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      displayApp();
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className="app">
