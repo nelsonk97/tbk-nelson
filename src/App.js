@@ -1,5 +1,5 @@
 import Modal from "react-bootstrap/Modal";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
@@ -15,11 +15,7 @@ const App = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  function displayApp() {
-    document.getElementByClass("app").style.display = "none";
-  }
-
+  
   return (
     <div className="app">
       <div className="container">
