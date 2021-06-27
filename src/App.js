@@ -1,5 +1,6 @@
 import Modal from "react-bootstrap/Modal";
-import React, { useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
+import ReactDOM from "react-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
@@ -15,13 +16,16 @@ const App = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
+
+  useEffect(() => {
+    setTimeout(() => {
+      handleShow();
+    }, 3000); //miliseconds
+  }, []);
+
   return (
     <div className="app">
       <div className="container">
-        <Button variant="primary" onClick={handleShow}>
-          Launch demo modal
-        </Button>
 
         <Modal
           dialogClassName="modal-90w"
