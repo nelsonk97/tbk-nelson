@@ -1,0 +1,249 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Variables
+$base-color: #09326e;
+$accent-color: #9f173d;
+$font-color: #fff;
+$button-color: #000;
+
+$primary-font: "Roboto Condensed", sans-serif;
+$secondary-font: "Viaoda Libre", cursive;
+$script-font: "Pinyon Script", cursive;
+
+// App
+.app {
+  text-align: center;
+  font-family: $primary-font;
+
+  h1 {
+    color: $base-color !important;
+  }
+}
+
+// Modal
+.modal-90w {
+  max-width: 55vw !important;
+}
+
+.modal-content {
+  overflow: none;
+  background-clip: content-box; /* support: IE9+ */
+  background-color: #ccc;
+  border: 6px solid transparent !important;
+  outline: 1.5px solid white !important;
+  border-radius: 0px !important;
+}
+
+.modal-header {
+  border-bottom: unset !important;
+  .close {
+    color: $accent-color;
+  }
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  word-break: normal;
+  width: 75%;
+
+  .modal-company-name {
+    line-height: 95%;
+
+    :nth-child(2) {
+      color: $accent-color;
+    }
+  }
+}
+
+.modal-footer {
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+  height: auto;
+  border-radius: 0px !important;
+  background-color: $accent-color;
+  color: $font-color;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.footer-inputs {
+  height: 40px;
+  display: flex;
+  align-items: center;
+
+  input {
+    margin: 3px;
+    height: inherit;
+    border: none;
+    border-radius: 0px;
+  }
+
+  .custom-btn {
+    height: inherit;
+    background-color: black;
+    color: $font-color;
+    border: none;
+    text-transform: uppercase;
+    font-family: $secondary-font;
+  }
+}
+
+.footer-text h2 {
+  font-family: $secondary-font;
+  text-transform: uppercase;
+}
+
+.footer-detail {
+  width: 50%;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+// Text
+.main-text {
+  width: 80%;
+  margin-top: 3vh;
+}
+
+.text-left {
+  margin-top: 1vh;
+}
+
+.small-text {
+  font-family: $primary-font;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 95%;
+}
+
+.large-text {
+  font-family: $secondary-font;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 80%;
+}
+
+.script-text {
+  font-size: 16px;
+  font-family: $script-font;
+}
+
+// Horizontal line
+hr {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  width: 6vw;
+  height: 1.5px;
+  background-color: $accent-color;
+}
+
+// Unordered list
+ul {
+  list-style: none; /* Remove default bullets */
+}
+
+ul li::before {
+  content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: $accent-color; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+// Images
+img {
+  position: absolute;
+  max-width: 13%;
+  top: -2.5%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-4 {
+  top: unset;
+  bottom: -3%;
+}
+
+.img-2 {
+  top: 10%;
+  left: 92%;
+  right: 0;
+  max-width: 15%;
+}
+
+.img-1 {
+  left: -43%;
+  top: 40%;
+  right: 100%;
+  max-width: 50%;
+}
+
+img.img-1,
+img.img-2 {
+  -webkit-animation: mover 2s infinite alternate;
+  animation: mover 2s infinite alternate;
+}
+img.img-1,
+img.img-2 {
+  -webkit-animation: mover 2s infinite alternate;
+  animation: mover 2s infinite alternate;
+}
+@-webkit-keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+// Breakpoint changes
+@include media-breakpoint-down(sm) {
+  img {
+    display: none;
+  }
+
+  .modal-90w {
+    max-width: 90vw !important;
+  }
+
+  .footer-detail {
+    width: 100%;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .modal-90w {
+    max-width: 90vw !important;
+  }
+
+  .img-1 {
+    left: -7%;
+    max-width: 30%;
+  }
+}
