@@ -18,9 +18,13 @@ const App = () => {
 
   const [seconds, setSeconds] = useState(0);
 
+  function displayApp() {
+    document.getElementByClass("app").style.display = "none";
+  }
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setSeconds((seconds) => seconds + 1);
+      displayApp();
     }, 3000);
     return () => clearInterval(interval);
   }, []);
